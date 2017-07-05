@@ -4,7 +4,7 @@
     <!--设置列表删除时动态效果-->
     <div v-for="(item, index) of nowMessageList"
          :class="[{swipeleft: isSwipe[index]},'wrap']"
-         @click="getActiveId_x(item._id,index)"
+         @click="getActiveId_x(item._id)"
          ref="child"
          :key="index">
   
@@ -42,6 +42,7 @@ import { mapState, mapGetters, mapMutations } from 'vuex'
 // 后续会将滑动封装至子组件
 // import swipeDelete from './swipeDelete'
 export default {
+  name: 'message',
   data() {
     return {
       isSwipe: [false, false, false]

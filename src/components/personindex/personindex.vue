@@ -74,11 +74,11 @@
       </div>
     </div>
   
-    <mu-tabs class="bottom">
+    <mu-tabs class="bottom" >
       <mu-tab value="tab1"
               icon="videocam" />
       <mu-tab value="tab2"
-              icon="phone" />
+              icon="phone" color="#f00"/>
       <mu-tab value="tab3"
               icon="chat_bubble"
               @click="showDialog_x" />
@@ -89,6 +89,7 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
 export default {
+  name: 'personindex',
   data() {
     return {
       activeTab: 'tab1'
@@ -127,6 +128,8 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '../../common/stylus/mixin.styl'
+.icons
+  color:#f00
 .index
   position: absolute
   z-index: 102

@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
     <!--头部导航-->
     <div class="container-top">
@@ -19,7 +20,8 @@
     </div>
   
     <!--主页左侧弹出层-->
-    <my-sidebar></my-sidebar>
+    <!--此处加z-index，防止弹出时被遮罩层遮挡-->
+    <my-sidebar style="z-index: 20141224;"></my-sidebar>
     <!--对话界面-->
     <my-dialog class="my-dialog"
                v-if="dialog"></my-dialog>
@@ -67,6 +69,8 @@ export default {
 @import './common/stylus/mixin.styl'
 
 #app
+  .color-b
+    color:color-b
   position:relative
   min-height: 100vh
   width: 100%
@@ -74,9 +78,8 @@ export default {
   .my-dialog
     position: absolute
   .my-personindex
-    .bottom
-      .material-icons
-        color: color-b
+    .mu-icon.material-icons
+      color: color-b
   .container-top
     position: fixed
     z-index: 101
@@ -98,12 +101,6 @@ export default {
     left: 0
     width: 100%
     height: 10%
-    .tab
-      .mu-bottom-item-active .mu-bottom-item-icon
-        color:color-b
-      .mu-bottom-item-active .mu-bottom-item-text
-        font-weight: 700
-        color:color-b
   .container-content
     width:100%
     .patch
